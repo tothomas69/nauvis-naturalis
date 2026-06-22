@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 21.06.2026
+  Changes:
+    - Mod renamed to Gleba Reimagined: Nauvis Naturalis
+    - Authorship transferred to wyndsteel, original mod by Leftn
+    - Biochamber fully restored - no longer deleted by the mod
+    - Biochamber rewired to run on electricity instead of nutrients
+    - Biochamber technology rewired with non-Gleba prerequisites
+    - Agricultural tower fully restored - no longer deleted by the mod
+    - Agricultural tower technology rewired with non-Gleba prerequisites
+    - Agricultural tower crafting recipe redesigned with non-Gleba ingredients
+    - Agricultural tower restricted to Nauvis surface only
+    - Trees can now be planted on any soil type on Nauvis
+    - Bioflux recipe redesigned with biologically thematic ingredients
+    - Bioflux recipe now crafted in the biochamber
+    - Bioflux recipe output increased to 2 per craft
+    - Fish breeding recipe updated with rebalanced ingredient amounts
+    - Fish breeding recipe now crafted in the biochamber
+    - Fish breeding output now explicitly set to 3 raw fish
+    - Wood processing recipe redesigned to require water and produce guaranteed seeds
+    - Wood processing recipe moved to chemistry category
+    - Added README with full mod documentation
+---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 6.12.2024
+  Changes:
+    - Fixed using null instead of luas nil
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 19.11.2024
+  Changes:
+    - Stopped the removal of gleba menu simulations
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 16.11.2024
+  Compatibility:
+    - Changed deleted items to now be hidden instead
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 15.11.2024
+  Bugfixes:
+    - Fixed various recipes
+  Changes:
+    - Refactored internal functions to reduce mod size
+    - Moved various changes to the now required delete-planet-compatibility mod
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 11.11.2024
+  Bugfixes:
+    - Fixed Agricultural Science Pack not having a crafting method
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 10.11.2024
+  Changes:
+    - Initial release by Leftn
+---------------------------------------------------------------------------------------------------

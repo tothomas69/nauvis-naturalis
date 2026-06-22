@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS directory thumbnails
+._*
+
+# macOS Spotlight
+.Spotlight-V100
+.Trashes
+
+# Leftover backup files
+*.bak
+
+# External mod zips - dependencies should be installed via mod portal
+*.zip

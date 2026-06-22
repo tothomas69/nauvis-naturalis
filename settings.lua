@@ -1,0 +1,2 @@
+-- No startup settings currently needed
+-- Spoilage toggle removed: spoilage has no role in this mod
