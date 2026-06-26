@@ -223,7 +223,9 @@ if data.raw.recipe["agricultural-science-pack"] then
 	-- Disabled here; unlocked via bioflux technology effects
 	data.raw.recipe["agricultural-science-pack"].enabled = false
 	data.raw.recipe["agricultural-science-pack"].ingredients = {
-		{type = "item", name = "raw-fish", amount = 5},
+		{type = "item", name = "wood", amount = 20},
+		{type = "item", name = "tree-seed", amount = 2},
+		{type = "item", name = "raw-fish", amount = 3},
 		{type = "item", name = "bioflux", amount = 5}
 	}
 	data.raw.recipe["agricultural-science-pack"].category = "organic"
