@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 25.06.2026
+  Bugfixes:
+    - Fixed biochamber requiring nutrients as fuel; converted to electric power source
+  Changes:
+    - Fish breeding recipe bioflux cost reduced from 2 to 1
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 21.06.2026
   Changes:
