@@ -117,7 +117,7 @@ Electromagnetic + Metallurgic + Space Science
 
 - Gleba the planet (hidden, map gen disabled)
 - All Gleba-native plants, terrain tiles, and flora
-- Pentapod enemies (stompers removed; wrigglers and strafers retained for achievements)
+- Pentapod enemies (stompers removed)
 - Yumako and jellynut processing chains
 - Nutrients and bacteria cultivation
 - All spoilage-related recipes and items permanently removed (spoilage has no role in this mod)

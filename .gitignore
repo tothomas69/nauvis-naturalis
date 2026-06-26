@@ -15,3 +15,6 @@
 
 # External mod zips - dependencies should be installed via mod portal
 *.zip
+
+# IDE
+.idea

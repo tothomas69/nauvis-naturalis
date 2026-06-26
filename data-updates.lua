@@ -258,7 +258,7 @@ if data.raw.recipe["fish-breeding"] then
 	-- the biological catalyst replacing vanilla's nutrients
 	data.raw.recipe["fish-breeding"].ingredients = {
 		{type = "item", name = "raw-fish", amount = 2},
-		{type = "item", name = "bioflux", amount = 2},
+		{type = "item", name = "bioflux", amount = 1},
 		{type = "fluid", name = "water", amount = 50}
 	}
 	-- "organic" is the recipe category that runs in the biochamber
@@ -338,6 +338,20 @@ end
 
 if data.raw["simple-entity"]["copper-stromatolite"] then
 	data.raw["simple-entity"]["copper-stromatolite"].minable = nil
+end
+
+-- Convert the biochamber from nutrient-burning to electric.
+-- Vanilla's biochamber is a burner fueled by nutrients; with the whole nutrient
+-- chain removed, that fuel is unobtainable and the machine silently stalls.
+-- We swap ONLY the energy_source and leave energy_usage untouched, so the
+-- machine's power draw stays at the vanilla rate (no guessed numbers).
+if data.raw["assembling-machine"]["biochamber"] then
+	data.raw["assembling-machine"]["biochamber"].energy_source =
+	{
+		type = "electric",
+		usage_priority = "secondary-input",
+		emissions_per_minute = { pollution = 2 } -- half the token value we discussed
+	}
 end
 -- End entity editing
 
