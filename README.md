@@ -14,13 +14,13 @@ The prototype hiding functions used internally are adapted from Leftn's [delete-
 
 ## Overview
 
-Like Leftn I too have a strong hatred of Gleba, having used his mod for a while I wanted to make it a little more interesting
-aligned to my own vision of how mod and its change should be applied. Gleba Reimagined: Nauvis Naturalis removes Gleba from
-the game entirely and rebuilds its biological production tier from the ground up, using only resources available on Nauvis and the other planets.
+Gleba Reimagined: Nauvis Naturalis removes Gleba from the game entirely and rebuilds its biological production tier from the ground up, 
+rather than simply deleting Gleba's content, this mod reimagines it — the biochamber and agricultural tower are fully retained
+and rewired to work with Nauvis-native resources, creating a coherent biological production chain rooted on your home planet. 
 
-Rather than simply deleting Gleba's content, this mod reimagines it — the biochamber and agricultural tower are fully retained
-and rewired to work with Nauvis-native resources, creating a coherent biological production chain rooted on your home planet.
-
+Reflective of modern day, fish farming, automated tree growing, and sustainably harvested lumber - you have something to use that lumber on 
+finally!! Like Leftn I too have a strong dislike of Gleba having used his mod for a while. I wanted to make play through a little more interesting and
+aligned to my own vision of how Factorio without Glebus might look. I kept the good pieces and removed the annoying bits. Hope you enjoy. 
 ---
 
 ## How It Works

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 29.06.2026
+  Balancing:
+    - Bioflux tungsten-ore cost reduced from 3 to 1, cutting the Vulcanus import to a trace amount (~0.33 ore per bioflux after the biochamber's productivity bonus)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 28.06.2026
   Balancing:

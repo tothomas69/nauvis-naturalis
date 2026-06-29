@@ -273,7 +273,7 @@ end
 if data.raw.recipe["bioflux"] then
 	data.raw.recipe["bioflux"].ingredients =
 	{
-		{type = "item", name = "tungsten-ore", amount = 3},
+		{type = "item", name = "tungsten-ore", amount = 1},  -- trace catalyst; with biochamber +50% this is ~0.33 ore per bioflux
 		{type = "item", name = "carbon", amount = 4},
 		{type = "item", name = "raw-fish", amount = 6},
 		{type = "fluid", name = "water", amount = 50}
