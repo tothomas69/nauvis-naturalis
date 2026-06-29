@@ -275,7 +275,7 @@ if data.raw.recipe["bioflux"] then
 	{
 		{type = "item", name = "tungsten-ore", amount = 3},
 		{type = "item", name = "carbon", amount = 4},
-		{type = "item", name = "raw-fish", amount = 3},
+		{type = "item", name = "raw-fish", amount = 6},
 		{type = "fluid", name = "water", amount = 50}
 	}
 	data.raw.recipe["bioflux"].category = "organic"
@@ -286,28 +286,15 @@ end
 if data.raw.recipe["wood-processing"] then
 	-- Repurpose the existing wood-processing recipe slot with our new design.
 	-- Breaks down wood with water to extract biological material as tree seeds.
+	-- 2:1 wood->seed: a tree yields 4 wood, so each seed returns as 2 -> the loop expands
 	data.raw.recipe["wood-processing"].ingredients = {
 		{type = "item", name = "wood", amount = 2},
-		{type = "fluid", name = "water", amount = 50}
+		{type = "fluid", name = "water", amount = 20}
 	}
 	-- Runs in a chemical plant — water + organic matter = biological extraction
 	data.raw.recipe["wood-processing"].category = "chemistry"
 	-- One tree seed per craft, used to plant trees on Nauvis
 	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=1}}
-else
-	-- If the recipe doesn't exist yet, create it from scratch
-	data:extend({{
-		type = "recipe",
-		name = "wood-processing",
-		enabled = false, -- unlocked via bioflux technology
-		category = "chemistry",
-		energy_required = 5,
-		ingredients = {
-			{type = "item", name = "wood", amount = 2},
-			{type = "fluid", name = "water", amount = 50}
-		},
-		results = {{type="item", name="tree-seed", amount=1}}
-	}})
 end
 -- End Recipe editing
 

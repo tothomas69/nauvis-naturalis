@@ -1,5 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 28.06.2026
+  Balancing:
+    - Wood-processing rebalanced to 2 wood and 20 water per seed so tree farming is self-sustaining (a planted tree yields 4 wood, enough to replace its own seed twice over)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
+Date: 25.06.2026
+  Bugfixes:
+    - Fixed wood-processing recipe not appearing after researching bioflux technology
+  Changes:
+    - Wood-processing cost increased to 50 wood and 150 water per seed
+    - Agricultural science pack recipe now requires 3 raw fish alongside wood, seeds, and bioflux
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
 Date: 25.06.2026
   Changes:
     - Agricultural science pack recipe updated: fish replaced with 20 wood and 2 tree seeds
