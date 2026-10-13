@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 12.10.2026
+  Balancing:
+    - Wood processing now yields 2 tree seeds per craft (was 1) so large tree farms can sustain their own seed supply
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 25.06.2026
   Bugfixes:

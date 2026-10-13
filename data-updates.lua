@@ -290,8 +290,10 @@ if data.raw.recipe["wood-processing"] then
 	}
 	-- Runs in a chemical plant — water + organic matter = biological extraction
 	data.raw.recipe["wood-processing"].category = "chemistry"
-	-- One tree seed per craft, used to plant trees on Nauvis
-	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=1}}
+	-- Two tree seeds per craft (was 1). Each planted tree harvests 4 wood,
+	-- so 1 wood per seed lets one harvest fund four replants. Keeps large
+	-- agricultural-tower farms (40+ towers) self-sustaining on seeds.
+	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=2}}
 else
 	-- If the recipe doesn't exist yet, create it from scratch
 	data:extend({{
@@ -304,7 +306,8 @@ else
 			{type = "item", name = "wood", amount = 2},
 			{type = "fluid", name = "water", amount = 50}
 		},
-		results = {{type="item", name="tree-seed", amount=1}}
+		-- Two seeds per craft; matches the branch above
+		results = {{type="item", name="tree-seed", amount=2}}
 	}})
 end
 -- End Recipe editing
