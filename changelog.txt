@@ -1,6 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 12.10.2026
+  Balancing:
+    - Wood processing now yields 2 tree seeds per craft (was 1), so large tree farms can keep themselves seeded and still supply agricultural science
+---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 10.10.2026
+  Balancing:
+    - Fish breeding output raised from 3 to 4 raw fish per craft (6 with the biochamber's productivity bonus)
+    - Bioflux raw-fish cost reduced from 6 to 3, so each bioflux now costs 1 fish after the productivity bonus
+    - A full agricultural science line now needs roughly 2 science : 1 fish breeding : 1 bioflux biochambers, down from about 1 : 5 : 2
+  Graphics:
+    - Biochambers now glow a recipe-specific colour: deep red-orange for bioflux, water blue for fish breeding, lime for agricultural science
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 29.06.2026
+  Features:
+    - Productivity modules can now be used in wood-processing (more seeds per wood) and fish-breeding (more fish per craft)
+    - Fish breeding now benefits from the biochamber's built-in +50% productivity bonus, roughly doubling net fish output
   Balancing:
     - Bioflux tungsten-ore cost reduced from 3 to 1, cutting the Vulcanus import to a trace amount (~0.33 ore per bioflux after the biochamber's productivity bonus)
 ---------------------------------------------------------------------------------------------------
@@ -19,14 +36,10 @@ Date: 25.06.2026
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 25.06.2026
-  Changes:
-    - Agricultural science pack recipe updated: fish replaced with 20 wood and 2 tree seeds
----------------------------------------------------------------------------------------------------
-Version: 1.0.1
-Date: 25.06.2026
   Bugfixes:
     - Fixed biochamber requiring nutrients as fuel; converted to electric power source
   Changes:
+    - Agricultural science pack recipe updated: fish replaced with 20 wood and 2 tree seeds
     - Fish breeding recipe bioflux cost reduced from 2 to 1
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0

@@ -15,6 +15,7 @@ data:extend({{
 	enabled = false, -- unlocked via bioflux technology effects
 	category = "chemistry",
 	energy_required = 5,
+	allow_productivity = true, -- lets productivity modules boost seed yield per wood
 	ingredients = {
 		{type = "item", name = "wood", amount = 2},   -- 2:1 wood->seed keeps the loop self-sustaining
 		{type = "fluid", name = "water", amount = 20}  -- token water, retains the extraction flavor

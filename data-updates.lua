@@ -229,6 +229,13 @@ if data.raw.recipe["agricultural-science-pack"] then
 		{type = "item", name = "bioflux", amount = 5}
 	}
 	data.raw.recipe["agricultural-science-pack"].category = "organic"
+	-- Biochamber glow colour: lime to match the pack, warm cream secondary.
+	-- primary tints the main dome glow + light; secondary tints the second glow layer
+	data.raw.recipe["agricultural-science-pack"].crafting_machine_tint =
+	{
+		primary   = {r = 0.784, g = 0.941, b = 0.118, a = 1.000}, -- #C8F01E
+		secondary = {r = 1.000, g = 0.914, b = 0.639, a = 1.000}, -- #FFE9A3
+	}
 	data.raw.recipe["agricultural-science-pack"].energy_required = 30
 	-- Explicitly set output — 1 pack per craft
 	data.raw.recipe["agricultural-science-pack"].results = {{type="item", name="agricultural-science-pack", amount=1}}
@@ -265,9 +272,27 @@ if data.raw.recipe["fish-breeding"] then
 	}
 	-- "organic" is the recipe category that runs in the biochamber
 	data.raw.recipe["fish-breeding"].category = "organic"
-	-- Net gain of 1 fish per craft — slow amplifier, not a fish factory
-	data.raw.recipe["fish-breeding"].results = {{type="item", name="raw-fish", amount=3}}
+	-- Biochamber glow colour: bright water blue with seafoam.
+	-- Vanilla's pure blue {0,0,1} is too dark to read as an additive glow
+	data.raw.recipe["fish-breeding"].crafting_machine_tint =
+	{
+		primary   = {r = 0.122, g = 0.710, b = 1.000, a = 1.000}, -- #1FB5FF
+		secondary = {r = 0.498, g = 0.890, b = 0.831, a = 1.000}, -- #7FE3D4
+	}
+	-- Base output 4 fish (nominal net +2). With productivity enabled below, the
+	-- biochamber's innate +50% applies to the FULL output, lifting this to 6 fish
+	-- (net +4) before modules. Vanilla marks 2 of the result fish ignored_by_productivity
+	-- (so only the net fish get the bonus); replacing results below deliberately drops
+	-- that flag. Do NOT restore it - the breeder/bioflux/science ratios depend on it.
+	-- After paying back its 1 bioflux (= 1 fish at the bioflux recipe below), each breed
+	-- truly nets +3 fish. Raised from 3 because the old +0.5 true margin needed ~5 breeders
+	-- per science biochamber.
+	data.raw.recipe["fish-breeding"].results = {{type="item", name="raw-fish", amount=4}}
 	data.raw.recipe["fish-breeding"].surface_conditions = nil
+	-- Allow productivity modules on this breeding recipe. Quality is left off on purpose:
+	-- allow_quality would open the trivial infinite-legendary-fish exploit; productivity only
+	-- makes more common fish, which is what the bioflux loop wants.
+	data.raw.recipe["fish-breeding"].allow_productivity = true
 end
 
 if data.raw.recipe["bioflux"] then
@@ -275,10 +300,17 @@ if data.raw.recipe["bioflux"] then
 	{
 		{type = "item", name = "tungsten-ore", amount = 1},  -- trace catalyst; with biochamber +50% this is ~0.33 ore per bioflux
 		{type = "item", name = "carbon", amount = 4},
-		{type = "item", name = "raw-fish", amount = 6},
+		{type = "item", name = "raw-fish", amount = 3},  -- cut from 6: with +50% prod this is 1 fish per bioflux
 		{type = "fluid", name = "water", amount = 50}
 	}
 	data.raw.recipe["bioflux"].category = "organic"
+	-- Biochamber glow colour: deep reddish-orange to match the bioflux item.
+	-- Replaces vanilla's teal-green tint, which was the green glow seen in-game
+	data.raw.recipe["bioflux"].crafting_machine_tint =
+	{
+		primary   = {r = 0.910, g = 0.220, b = 0.059, a = 1.000}, -- #E8380F
+		secondary = {r = 1.000, g = 0.478, b = 0.180, a = 1.000}, -- #FF7A2E
+	}
 	-- Output is 2 bioflux per craft
 	data.raw.recipe["bioflux"].results = {{type="item", name="bioflux", amount=2}}
 	data.raw.recipe["bioflux"].surface_conditions = nil
@@ -286,15 +318,19 @@ end
 if data.raw.recipe["wood-processing"] then
 	-- Repurpose the existing wood-processing recipe slot with our new design.
 	-- Breaks down wood with water to extract biological material as tree seeds.
-	-- 2:1 wood->seed: a tree yields 4 wood, so each seed returns as 2 -> the loop expands
+	-- 2 wood -> 2 seeds (1 wood per seed): a tree yields 4 wood, so one harvest
+	-- funds four replants. Needed for large farms (40+ towers) that also feed
+	-- agricultural science, which consumes 20 wood + 2 seeds per pack.
 	data.raw.recipe["wood-processing"].ingredients = {
 		{type = "item", name = "wood", amount = 2},
 		{type = "fluid", name = "water", amount = 20}
 	}
 	-- Runs in a chemical plant — water + organic matter = biological extraction
 	data.raw.recipe["wood-processing"].category = "chemistry"
-	-- One tree seed per craft, used to plant trees on Nauvis
-	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=1}}
+	-- Two tree seeds per craft (was 1 before 1.0.6), used to plant trees on Nauvis
+	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=2}}
+	-- Allow productivity modules (chemical plant) to raise seed yield per wood
+	data.raw.recipe["wood-processing"].allow_productivity = true
 end
 -- End Recipe editing
 
