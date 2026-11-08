@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 08.11.2026
+  Compatibility:
+    - Updated for Factorio 2.1 (no longer loads on 2.0)
+    - Recipes now use the 2.1 categories array instead of the removed category field
+    - Recycling recipes are generated through the new Recycler mod instead of Quality
+    - Wood processing now overrides the vanilla tree-seed recipe, which 2.1 renamed from wood-processing; existing saves migrate automatically
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 12.10.2026
   Balancing:

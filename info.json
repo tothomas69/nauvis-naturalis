@@ -1,9 +1,9 @@
 {
 	"name": "gleba-reimagined",
-	"version": "1.0.6",
+	"version": "1.1.0",
 	"title": "Gleba Reimagined: Nauvis Naturalis",
 	"author": "wyndsteel",
-	"factorio_version": "2.0",
-	"dependencies": ["base >= 2.0.0", "space-age >= 2.0.15"],
+	"factorio_version": "2.1",
+	"dependencies": ["base >= 2.1.0", "space-age >= 2.1.0"],
 	"description": "Removes Gleba and rebuilds its biological production chain on Nauvis using native resources in a realistic and balanced way. The biochamber and agricultural tower are fully retained, added bonus you grow trees on Nauvis helps reduce pollution."
 }

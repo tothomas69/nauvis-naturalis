@@ -1,4 +1,4 @@
-local recycling = require("__quality__.prototypes.recycling")
+local recycling = require("__recycler__.recycling") -- 2.1: moved from quality to recycler mod
 
 require("prototypes.item")
 require("prototypes.recipe")
@@ -62,7 +62,7 @@ if data.raw.technology["bioflux"] then
 		},
 		{
 			type = "unlock-recipe",
-			recipe = "wood-processing"
+			recipe = "tree-seed"
 		},
 		{
 			type = "unlock-recipe",
@@ -171,7 +171,7 @@ if data.raw.recipe["carbon-fiber"] then
 		{type = "item", name = "carbon", amount = 2},
 		{type = "item", name = "bioflux", amount = 20}
 	}
-	data.raw.recipe["carbon-fiber"].category = "chemistry"
+	data.raw.recipe["carbon-fiber"].categories = {"chemistry"}
 	data.raw.recipe["carbon-fiber"].results = {{type="item", name="carbon-fiber", amount=2}}
 	data.raw.recipe["carbon-fiber"].surface_conditions = nil
 end
@@ -184,7 +184,7 @@ if data.raw.recipe["stack-inserter"] then
 		{type = "item", name = "bioflux", amount = 10},
 		{type = "item", name = "bulk-inserter", amount = 1}
 	}
-	data.raw.recipe["stack-inserter"].category = "crafting"
+	data.raw.recipe["stack-inserter"].categories = {"crafting"}
 	data.raw.recipe["stack-inserter"].results = {{type="item", name="stack-inserter", amount=1}}
 end
 
@@ -228,7 +228,7 @@ if data.raw.recipe["agricultural-science-pack"] then
 		{type = "item", name = "raw-fish", amount = 3},
 		{type = "item", name = "bioflux", amount = 5}
 	}
-	data.raw.recipe["agricultural-science-pack"].category = "organic"
+	data.raw.recipe["agricultural-science-pack"].categories = {"organic"}
 	-- Biochamber glow colour: lime to match the pack, warm cream secondary.
 	-- primary tints the main dome glow + light; secondary tints the second glow layer
 	data.raw.recipe["agricultural-science-pack"].crafting_machine_tint =
@@ -271,7 +271,7 @@ if data.raw.recipe["fish-breeding"] then
 		{type = "fluid", name = "water", amount = 50}
 	}
 	-- "organic" is the recipe category that runs in the biochamber
-	data.raw.recipe["fish-breeding"].category = "organic"
+	data.raw.recipe["fish-breeding"].categories = {"organic"}
 	-- Biochamber glow colour: bright water blue with seafoam.
 	-- Vanilla's pure blue {0,0,1} is too dark to read as an additive glow
 	data.raw.recipe["fish-breeding"].crafting_machine_tint =
@@ -303,7 +303,7 @@ if data.raw.recipe["bioflux"] then
 		{type = "item", name = "raw-fish", amount = 3},  -- cut from 6: with +50% prod this is 1 fish per bioflux
 		{type = "fluid", name = "water", amount = 50}
 	}
-	data.raw.recipe["bioflux"].category = "organic"
+	data.raw.recipe["bioflux"].categories = {"organic"}
 	-- Biochamber glow colour: deep reddish-orange to match the bioflux item.
 	-- Replaces vanilla's teal-green tint, which was the green glow seen in-game
 	data.raw.recipe["bioflux"].crafting_machine_tint =
@@ -315,22 +315,24 @@ if data.raw.recipe["bioflux"] then
 	data.raw.recipe["bioflux"].results = {{type="item", name="bioflux", amount=2}}
 	data.raw.recipe["bioflux"].surface_conditions = nil
 end
-if data.raw.recipe["wood-processing"] then
-	-- Repurpose the existing wood-processing recipe slot with our new design.
+if data.raw.recipe["tree-seed"] then
+	-- Override vanilla tree-seed (named wood-processing before Factorio 2.1) with our design.
 	-- Breaks down wood with water to extract biological material as tree seeds.
 	-- 2 wood -> 2 seeds (1 wood per seed): a tree yields 4 wood, so one harvest
 	-- funds four replants. Needed for large farms (40+ towers) that also feed
 	-- agricultural science, which consumes 20 wood + 2 seeds per pack.
-	data.raw.recipe["wood-processing"].ingredients = {
+	data.raw.recipe["tree-seed"].ingredients = {
 		{type = "item", name = "wood", amount = 2},
 		{type = "fluid", name = "water", amount = 20}
 	}
 	-- Runs in a chemical plant — water + organic matter = biological extraction
-	data.raw.recipe["wood-processing"].category = "chemistry"
+	data.raw.recipe["tree-seed"].categories = {"chemistry"}
 	-- Two tree seeds per craft (was 1 before 1.0.6), used to plant trees on Nauvis
-	data.raw.recipe["wood-processing"].results = {{type="item", name="tree-seed", amount=2}}
+	data.raw.recipe["tree-seed"].results = {{type="item", name="tree-seed", amount=2}}
 	-- Allow productivity modules (chemical plant) to raise seed yield per wood
-	data.raw.recipe["wood-processing"].allow_productivity = true
+	data.raw.recipe["tree-seed"].allow_productivity = true
+	-- Keep the 5 s craft time of our pre-2.1 recipe (vanilla tree-seed is 2 s)
+	data.raw.recipe["tree-seed"].energy_required = 5
 end
 -- End Recipe editing
 
