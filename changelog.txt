@@ -5,6 +5,7 @@ Date: 08.11.2026
     - Updated for Factorio 2.1 (no longer loads on 2.0)
     - Recipes now use the 2.1 categories array instead of the removed category field
     - Recycling recipes are generated through the new Recycler mod instead of Quality, now declared as a dependency
+    - Science packs are no longer looked up as "tool" prototypes, which 2.1 dropped (fixed a crash on load)
     - Wood processing now overrides the vanilla tree-seed recipe, which 2.1 renamed from wood-processing; existing saves migrate automatically
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6

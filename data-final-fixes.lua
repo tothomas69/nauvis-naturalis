@@ -3,27 +3,10 @@
 -- Used here to guarantee spoil_ticks removal sticks, since Space Age
 -- re-applies spoilage properties during its own data-updates phase.
 
-if data.raw.tool["agricultural-science-pack"] then
-	data.raw.tool["agricultural-science-pack"].spoil_ticks = nil
-	data.raw.tool["agricultural-science-pack"].spoil_result = nil
-end
+local util = require("prototypes.util")
 
-if data.raw.capsule["bioflux"] then
-	data.raw.capsule["bioflux"].spoil_ticks = nil
-	data.raw.capsule["bioflux"].spoil_result = nil
-end
-
-if data.raw.capsule["raw-fish"] then
-	data.raw.capsule["raw-fish"].spoil_ticks = nil
-	data.raw.capsule["raw-fish"].spoil_result = nil
-end
-
-if data.raw.item["biter-egg"] then
-	data.raw.item["biter-egg"].spoil_ticks = nil
-	data.raw.item["biter-egg"].spoil_to_trigger_result = nil
-end
-
-if data.raw.item["captive-biter-spawner"] then
-	data.raw.item["captive-biter-spawner"].spoil_ticks = nil
-	data.raw.item["captive-biter-spawner"].spoil_to_trigger_result = nil
-end
+util.remove_spoilage("agricultural-science-pack")
+util.remove_spoilage("bioflux")
+util.remove_spoilage("raw-fish")
+util.remove_spoilage("biter-egg")
+util.remove_spoilage("captive-biter-spawner")

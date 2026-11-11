@@ -1,4 +1,5 @@
 local recycling = require("__recycler__.recycling") -- 2.1: moved from quality to recycler mod
+local util = require("prototypes.util")
 
 require("prototypes.item")
 require("prototypes.recipe")
@@ -240,7 +241,7 @@ if data.raw.recipe["agricultural-science-pack"] then
 	-- Explicitly set output — 1 pack per craft
 	data.raw.recipe["agricultural-science-pack"].results = {{type="item", name="agricultural-science-pack", amount=1}}
 	-- Remove spoil time — this is a Nauvis science pack now, not a Gleba perishable
-	data.raw.tool["agricultural-science-pack"].spoil_ticks = nil
+	util.remove_spoilage("agricultural-science-pack")
 	data.raw.recipe["agricultural-science-pack"].surface_conditions =
 	{
 		{
@@ -508,7 +509,4 @@ recycling.generate_recycling_recipe(data.raw.recipe["efficiency-module-3"])
 
 -- Must run last — Space Age re-applies spoil_ticks during its own data-updates phase
 -- so we override it here at the end to guarantee it sticks
-if data.raw.tool["agricultural-science-pack"] then
-	data.raw.tool["agricultural-science-pack"].spoil_ticks = nil
-	data.raw.tool["agricultural-science-pack"].spoil_result = nil
-end
+util.remove_spoilage("agricultural-science-pack")
